@@ -265,6 +265,21 @@ function domain_views_views_data() {
       'label' => t('Available on current domain'),
     ),
   );
+  // Define available on current domain field
+  $data['domain_access']['current_ignore_all'] = array(
+    'title' => t('Available on current domain, ignore all affiliates'),
+    'help' => t('Filters out nodes not available on current domain (published only to current domain, all affiliates setting is ignored)'),
+    'field' => array(
+      'field' => 'gid',
+      'handler' => 'domain_views_handler_field_domain_access_current_ignore_all',
+      'click sortable' => TRUE,
+    ),
+    'filter' => array(
+      'field' => 'gid',
+      'handler' => 'domain_views_handler_filter_domain_access_current_ignore_all',
+      'label' => t('Available on current domain, ignore all affiliates'),
+    ),
+  );
   /* TODO: make this sortable.
   $data['domain_access']['sitename'] = array(
     'title' => t('Site name'),
